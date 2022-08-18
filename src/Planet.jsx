@@ -1,6 +1,7 @@
 import { useRef } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { Sphere, useTexture } from "@react-three/drei";
+import PlanetCamera from "./PlanetCamera";
 
 // import PlanetCamera from "./PlanetCamera";
 
@@ -18,15 +19,19 @@ export function Planet(props) {
     // map: "/world_topo_bathy_200407_3x5400x2700.jpg"
     "/textures/8k_earth_daymap.jpg"
   ]);
+
+  const controls = useThree((state) => state.controls);
+  console.log(controls);
+
   return (
     <>
       <Sphere
         args={[props.size, 128, 128]}
         scale={1}
         ref={ref}
-        rotation={[-Math.PI / 2, 0, 0]}
+        // rotation={[-Math.PI / 2, 0, 0]}
       >
-        <meshPhysicalMaterial opacity={0.9} transparent map={earthday} />
+        <meshPhongMaterial map={earthday} />
         {/* <PlanetCamera /> */}
       </Sphere>
     </>

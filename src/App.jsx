@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Stats, OrbitControls } from "@react-three/drei";
 import { Leva } from "leva";
@@ -63,6 +63,8 @@ const System = () => {
 };
 
 export default function App() {
+  const ocRef = useRef(null);
+
   return (
     <>
       <div
@@ -87,6 +89,7 @@ export default function App() {
         />
       </div>
       <Canvas
+        gl={{ antialias: true }}
         camera={{
           fov: 15,
           position: [0, 1000, 1000],
@@ -94,7 +97,8 @@ export default function App() {
           far: 10000000
         }}
       >
-        <OrbitControls />
+        <OrbitControls makeDefault target={[0, 0.5, 0]} />
+        {/* <OrbitControls /> */}
         {/* <axesHelper args={[10, 10, 10]} position={[0, 0, 0]} /> */}
         <directionalLight intensity={0.5} />
         <ambientLight intensity={0.5} />

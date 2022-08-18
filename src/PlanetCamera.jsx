@@ -3,9 +3,42 @@ import { useControls } from "leva";
 import { CameraHelper, Vector3, Quaternion, Euler } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import { PerspectiveCamera, Box, useHelper } from "@react-three/drei";
+import { Text } from "@react-three/drei";
 
-import CompassText from "./CompassText";
-
+function CompassText() {
+  return (
+    <>
+      <Text position={[0, 0.45, -0.5]} scale={[0.1, 0.1, 0.1]}>
+        {" "}
+        North{" "}
+      </Text>
+      <Text
+        position={[0, 0.45, 0.5]}
+        scale={[0.1, 0.1, 0.1]}
+        rotation={[0, Math.PI, 0]}
+      >
+        {" "}
+        South{" "}
+      </Text>
+      <Text
+        position={[0.5, 0.45, 0]}
+        scale={[0.1, 0.1, 0.1]}
+        rotation={[0, -Math.PI / 2, 0]}
+      >
+        {" "}
+        East{" "}
+      </Text>
+      <Text
+        position={[-0.5, 0.45, 0]}
+        scale={[0.1, 0.1, 0.1]}
+        rotation={[0, Math.PI / 2, 0]}
+      >
+        {" "}
+        West{" "}
+      </Text>
+    </>
+  );
+}
 export default function PlanetCamera() {
   const planetCam = useRef();
 
@@ -87,12 +120,13 @@ export default function PlanetCamera() {
   const { camera } = useThree();
 
   const controls = useThree((state) => state.controls);
-  // console.log(controls)
+  console.log(controls);
   const spaceCamPos = new Vector3();
   const spaceCamRotation = new Quaternion();
 
   useEffect(() => {
     // console.log(showH)
+    // if (!toggleCam.on) {
     if (!toggleCam.on && controls) {
       // console.log(spaceCamPos)
       camera.position.copy(spaceCamPos); //Is null. useState case
