@@ -20,8 +20,8 @@ export function Planet(props) {
     "/textures/8k_earth_daymap.jpg"
   ]);
 
-  const controls = useThree((state) => state.controls);
-  console.log(controls);
+  // const controls = useThree((state) => state.controls);
+  // console.log(controls);
 
   return (
     <>
@@ -32,7 +32,7 @@ export function Planet(props) {
         // rotation={[-Math.PI / 2, 0, 0]}
       >
         <meshPhongMaterial map={earthday} />
-        {/* <PlanetCamera /> */}
+        <PlanetCamera />
       </Sphere>
     </>
   );

@@ -80,7 +80,7 @@ export default function App() {
         <Leva
           hideCopyButton
           fill
-          collapsed
+          // collapsed
           titleBar={{ title: "Settings" }}
           theme={{
             colors: { highlight2: "#FFFFFF" },
@@ -97,8 +97,8 @@ export default function App() {
           far: 10000000
         }}
       >
-        <OrbitControls makeDefault target={[0, 0.5, 0]} />
-        {/* <OrbitControls /> */}
+        {/* <OrbitControls makeDefault target={[0, 0.5, 0]} /> */}
+        <OrbitControls makeDefault enableDamping={false} />
         {/* <axesHelper args={[10, 10, 10]} position={[0, 0, 0]} /> */}
         <directionalLight intensity={0.5} />
         <ambientLight intensity={0.5} />
