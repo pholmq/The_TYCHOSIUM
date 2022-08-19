@@ -10,18 +10,10 @@ export function Planet(props) {
   useFrame(() => {
     ref.current.rotation.y -= 0.0005;
   });
-  // ref.current.scale.set(3,3,3)
-  // const [earthColor, ocean] = useTexture([
-  //   '/textures/earth-color.jpg',
-  //   '/textures/earth-ocean.jpg',
-  // ])
   const [earthday] = useTexture([
     // map: "/world_topo_bathy_200407_3x5400x2700.jpg"
     "/textures/8k_earth_daymap.jpg"
   ]);
-
-  // const controls = useThree((state) => state.controls);
-  // console.log(controls);
 
   return (
     <>

@@ -100,8 +100,8 @@ export default function App() {
         {/* <OrbitControls makeDefault target={[0, 0.5, 0]} /> */}
         <OrbitControls makeDefault enableDamping={false} />
         {/* <axesHelper args={[10, 10, 10]} position={[0, 0, 0]} /> */}
-        <directionalLight intensity={0.5} />
-        <ambientLight intensity={0.5} />
+        <directionalLight intensity={1} />
+        <ambientLight intensity={1} />
         <Suspense fallback={null}>
           <System />
         </Suspense>

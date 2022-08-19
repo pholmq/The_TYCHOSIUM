@@ -9,6 +9,7 @@ import { Vector3, MathUtils } from "three";
 
 import { Orbit } from "./Orbit";
 import { Planet } from "./Planet";
+import { Earth } from "./Earth";
 
 export function Cobj({ name, children }) {
   //REMINDER to self: DONT FORGET PLANET TILT OF EARTH tilt and tiltb
@@ -150,6 +151,7 @@ export function Cobj({ name, children }) {
               transparent
             />
             {s.axesHelper && <axesHelper args={[10, 10, 10]} />}
+            {s.earth && <Earth size={s.size} />}
             {s.planet && <Planet size={s.size} />}
           </Sphere>
           {children}

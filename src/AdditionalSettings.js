@@ -6,7 +6,7 @@ export const additionalSettings = {
     axesHelper: false
   },
   Earth: {
-    planet: true,
+    earth: true,
     color: "blue",
     type: "planet",
     visible: true,
