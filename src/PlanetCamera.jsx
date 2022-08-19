@@ -24,7 +24,7 @@ export default function PlanetCamera(props) {
   const camPos = useControls("Planet Camera", {
     Direction: { value: 0, max: Math.PI * 2, min: 0 },
     Up: { value: 0, max: Math.PI / 2, min: -Math.PI / 2 },
-    Height: { value: 3.6, max: 10, min: 3, step: 0.0001 },
+    Height: { value: 3.51, max: 10, min: 3, step: 0.0001 },
     Latitude: { value: 0, max: Math.PI, min: -Math.PI, step: 0.001 },
     Longitude: { value: 0, max: Math.PI * 2, min: 0, step: 0.001 }
   });
