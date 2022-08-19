@@ -51,7 +51,7 @@ export default function PlanetCamera(props) {
     planetCam.current.getWorldQuaternion(quaternion);
 
     camera.getWorldQuaternion(slerpQuaternion);
-    if (camera.position.distanceTo(vector) > 0.4) {
+    if (camera.position.distanceTo(vector) > 0.6) {
       //lerp & slerp cam towards planet
       camera.position.lerp(vector, 0.03);
       slerpQuaternion.slerp(quaternion, 0.0003);

@@ -142,7 +142,7 @@ export function Cobj({ name, children }) {
       )}
       <group name="Orbit" ref={orbitRef}>
         <group name="Pivot" ref={pivotRef} position={[orbitRadius, 0, 0]}>
-          <Sphere args={[3, 30, 30]} visible={s.visible}>
+          <Sphere args={[2, 30, 30]} visible={s.visible}>
             <meshBasicMaterial
               attach="material"
               color={s.color}
