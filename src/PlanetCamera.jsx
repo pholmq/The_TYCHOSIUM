@@ -40,6 +40,7 @@ export default function PlanetCamera(props) {
   console.log("camControls.enabled: " + camControls.enabled);
 
   const planetCam = useRef();
+  useHelper(showH.showHelper && planetCam, CameraHelper, 1);
 
   const vector = new Vector3();
   const quaternion = new Quaternion();
