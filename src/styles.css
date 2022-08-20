@@ -126,6 +126,10 @@ select {
   /* text-align: right; */
   color: white;
   opacity: 0.8;
+  background-color: #191c20;
+  border-radius: 4px;
+  margin: 0.2rem;
+  padding: 0.4rem;
 }
 
 /* .planetLabel {

@@ -2,7 +2,12 @@ import { useControls } from "leva";
 import { useRef, useEffect } from "react";
 import { CameraHelper, Vector3, Quaternion, Euler } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
-import { PerspectiveCamera, Box, useHelper } from "@react-three/drei";
+import {
+  PerspectiveCamera,
+  OrthographicCamera,
+  Box,
+  useHelper
+} from "@react-three/drei";
 export default function PlanetCamera(props) {
   const { camera } = useThree();
   const camControls = useThree((state) => state.controls);
@@ -28,18 +33,6 @@ export default function PlanetCamera(props) {
     Latitude: { value: 0, max: Math.PI, min: -Math.PI, step: 0.001 },
     Longitude: { value: 0, max: Math.PI * 2, min: 0, step: 0.001 }
   });
-  const orgCamPos = new Vector3();
-  const orgRotation = new Quaternion();
-  if (camControls !== null) {
-    console.log("camera: " + camera.position.x);
-    if (toggleCam.on) {
-      camera.position.copy(orgCamPos);
-
-      camControls.enabled = false;
-    } else {
-      camControls.enabled = true;
-    }
-  }
 
   // console.log("toggleCam.on: " + toggleCam.on);
   // console.log("camera: " + camera);
@@ -77,6 +70,27 @@ export default function PlanetCamera(props) {
     // console.log("toggleCam.on: " + toggleCam.on);
     // console.log("camera: " + camera);
     // console.log("controls: " + controls);
+    const orgCamPos = new Vector3();
+    const orgRotation = new Quaternion();
+    let orgFov, orgFar, orgNear;
+    if (camControls !== null && camera !== null) {
+      // console.log("camera: " + camera.position.x);
+      if (toggleCam.on) {
+        camera.getWorldPosition(orgCamPos);
+        // camera.getWorldQuaternion(orgRotation);
+        // orgFov = camera.fov;
+        // orgFar = camera.far;
+        // orgNear = camera.near;
+        camControls.enabled = false;
+      } else {
+        // camera.position.copy(orgCamPos);
+        // camera.rotation.setFromQuaternion(orgRotation);
+        // camera.fov = orgFov;
+        // camera.far = orgFar;
+        // camera.near = orgNear;
+        camControls.enabled = true;
+      }
+    }
   });
   return (
     <group rotation={[0, camPos.Longitude, 0]}>
@@ -90,7 +104,7 @@ export default function PlanetCamera(props) {
           <group position={[0, camPos.Height, 0]}>
             {/* <Box args={[0.02, 0.01, 0.02]} position={[0, 0, 0]}> */}
             <Box args={[0.02, 0.02, 0.02]} position={[0, 0, 0]}>
-              <meshPhongMaterial color="#ff0000" />
+              <meshBasicMaterial color="#ff0000" />
             </Box>
             <PerspectiveCamera
               ref={planetCam}
@@ -99,6 +113,13 @@ export default function PlanetCamera(props) {
               rotation-order={"YXZ"}
               rotation={[camPos.Up, camPos.Direction, 0]}
             ></PerspectiveCamera>
+            {/* <OrthographicCamera
+              ref={planetCam}
+              // {...camProps}
+              position={[0, 0, 0]}
+              rotation-order={"YXZ"}
+              rotation={[camPos.Up, camPos.Direction, 0]}
+            ></OrthographicCamera> */}
           </group>
         </group>
       </group>

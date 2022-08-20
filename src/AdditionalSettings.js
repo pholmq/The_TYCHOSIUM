@@ -50,7 +50,8 @@ export const additionalSettings = {
     arrows: true,
     planet: true,
     texture: "/textures/planets/2k_sun.jpg",
-    light: true
+    light: true,
+    glow: true
   },
   MercuryDefA: {
     color: "gray",

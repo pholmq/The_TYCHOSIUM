@@ -13,9 +13,10 @@ export function Earth(props) {
   const cloudsRef = useRef();
   const posRef = useStore((state) => state.posRef);
 
-  const [cloudsMap, colorMap] = useTexture([
+  const [cloudsMap, colorMap, bumpMap] = useTexture([
     "/textures/2k_earth_clouds.jpg",
-    "/textures/8k_earth_daymap.jpg"
+    "/textures/8k_earth_daymap.jpg",
+    "/textures/EarthBumpmap1024x512.png"
   ]);
 
   const [hovered, setHover] = useState(false);
@@ -46,13 +47,16 @@ export function Earth(props) {
         )}
         <sphereGeometry args={[props.size, 128, 128]} />
         {/* <meshPhongMaterial specularMap={specularMap} /> */}
-        <meshStandardMaterial
+        {/* <meshStandardMaterial
           map={colorMap}
+          // bumpMap={bumpMap}
+          // bumpScale={0.5}
           // normalMap={normalMap}
           metalness={0}
           roughness={1}
           // side={DoubleSide}
-        />
+        /> */}
+        <meshPhongMaterial map={colorMap} specular={0x404040} />
         <mesh ref={cloudsRef} scale="1">
           <sphereGeometry args={[props.size + 0.03, 64, 64]} />
           <meshPhongMaterial

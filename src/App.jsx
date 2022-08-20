@@ -89,10 +89,10 @@ export default function App() {
         />
       </div>
       <Canvas
-        dpr={(Math.min(window.devicePixelRatio), 2)}
+        // dpr={(Math.min(window.devicePixelRatio), 2)}
         camera={{
           fov: 15,
-          position: [0, 1000, 1000],
+          position: [0, 3000, 0],
           near: 0.1,
           far: 10000000
         }}
