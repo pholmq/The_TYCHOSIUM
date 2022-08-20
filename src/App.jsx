@@ -80,7 +80,7 @@ export default function App() {
         <Leva
           hideCopyButton
           fill
-          // collapsed
+          collapsed
           titleBar={{ title: "Settings" }}
           theme={{
             colors: { highlight2: "#FFFFFF" },
