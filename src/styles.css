@@ -125,6 +125,7 @@ select {
   /* transform: translate3d(200%, 0, 0); */
   /* text-align: right; */
   color: white;
+  opacity: 0.8;
 }
 
 /* .planetLabel {

@@ -1,11 +1,10 @@
 import { useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useTexture } from "@react-three/drei";
-import PlanetCamera from "./PlanetCamera";
 import { useStore } from "./store.js";
 import { Html } from "@react-three/drei";
-import { Vector3 } from "three";
-// import PlanetCamera from "./PlanetCamera";
+
+import PlanetCamera from "./PlanetCamera";
 
 export function Earth(props) {
   // console.log(props)
@@ -27,7 +26,6 @@ export function Earth(props) {
     earthRef.current.rotation.y = props.rotationSpeed * posRef.current;
     cloudsRef.current.rotation.y -= 0.0004;
   });
-  position = new Vector3(-10, 0, 0);
   return (
     <>
       <mesh
@@ -42,7 +40,7 @@ export function Earth(props) {
         onPointerOut={(e) => setHover(false)}
       >
         {hovered && (
-          <Html position={position}>
+          <Html position={[-10, 0, 0]}>
             <div className="planetLabel">Earth</div>
           </Html>
         )}

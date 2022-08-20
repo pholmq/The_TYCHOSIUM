@@ -151,7 +151,7 @@ export function Cobj({ name, children }) {
             /> */}
           {s.axesHelper && <axesHelper args={[10, 10, 10]} />}
           {s.earth && <Earth {...s} />}
-          {s.planet && <Planet {...s} />}
+          {s.type === "planet" && <Planet {...s} />}
           {/* </Sphere> */}
           {children}
         </group>

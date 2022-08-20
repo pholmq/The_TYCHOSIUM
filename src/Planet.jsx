@@ -1,6 +1,7 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
-import { Sphere, useTexture } from "@react-three/drei";
+import { Sphere, useTexture, Html } from "@react-three/drei";
+
 import PlanetCamera from "./PlanetCamera";
 
 // import PlanetCamera from "./PlanetCamera";
@@ -14,9 +15,32 @@ export function Planet(props) {
   // const [cloudsMap, colorMap] = useTexture([
   const [planetTexture] = useTexture([props.texture]);
   // console.log(props);
+
+  const [hovered, setHover] = useState(false);
+
   return (
     <>
-      <mesh ref={ref} scale="1">
+      <mesh
+        ref={ref}
+        scale="1"
+        // { e.stopPropagation(); handleT(); }}
+        onPointerOver={(e) => {
+          e.stopPropagation();
+          setHover(true);
+        }}
+        onPointerOut={(e) => {
+          e.stopPropagation();
+          setHover(false);
+        }}
+      >
+        {hovered && (
+          <Html position={[-10, 0, 0]}>
+            <div className="planetLabel">
+              {props.name} <br /> RA: XXhXXmXXs <br /> Dec: +XX°XX'XX"
+            </div>
+          </Html>
+        )}
+
         <sphereGeometry args={[props.size, 128, 128]} />
         {/* <meshPhongMaterial specularMap={specularMap} /> */}
         <meshStandardMaterial

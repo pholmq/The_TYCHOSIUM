@@ -8,7 +8,7 @@ export const additionalSettings = {
   Earth: {
     earth: true,
     color: "blue",
-    type: "planet",
+    // type: "planet",
     visible: true,
     axesHelper: false,
     arrows: true,
