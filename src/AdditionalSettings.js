@@ -32,7 +32,9 @@ export const additionalSettings = {
     color: "gray",
     type: "planet",
     visible: true,
-    axesHelper: false
+    axesHelper: false,
+    planet: true,
+    texture: "/textures/planets/2k_moon.jpg"
   },
 
   SunDefA: {
@@ -45,7 +47,10 @@ export const additionalSettings = {
     type: "planet",
     visible: true,
     axesHelper: false,
-    arrows: true
+    arrows: true,
+    planet: true,
+    texture: "/textures/planets/2k_sun.jpg",
+    light: true
   },
   MercuryDefA: {
     color: "gray",
@@ -62,7 +67,9 @@ export const additionalSettings = {
     type: "planet",
     visible: true,
     axesHelper: false,
-    arrows: true
+    arrows: true,
+    planet: true,
+    texture: "/textures/planets/2k_mercury.jpg"
   },
   VenusDefA: {
     color: "orange",
@@ -79,7 +86,9 @@ export const additionalSettings = {
     type: "planet",
     visible: true,
     axesHelper: false,
-    arrows: true
+    arrows: true,
+    planet: true,
+    texture: "/textures/planets/2k_venus.jpg"
   },
   MarsDefE: {
     color: "red",
@@ -97,7 +106,9 @@ export const additionalSettings = {
     visible: true,
     axesHelper: false,
     arrows: true,
-    rotationArrows: -6.67
+    rotationArrows: -6.67,
+    planet: true,
+    texture: "/textures/planets/2k_mars.jpg"
   },
   Phobos: {
     type: "planet"
@@ -112,7 +123,9 @@ export const additionalSettings = {
   Jupiter: {
     color: 0xcdc2b2,
     type: "planet",
-    visible: true
+    visible: true,
+    planet: true,
+    texture: "/textures/planets/2k_jupiter.jpg"
   },
   SaturnDef: {
     type: "deferent",
@@ -121,6 +134,8 @@ export const additionalSettings = {
   Saturn: {
     color: 0xa79662,
     type: "planet",
-    visible: true
+    visible: true,
+    planet: true,
+    texture: "/textures/planets/2k_saturn.jpg"
   }
 };

@@ -29,15 +29,17 @@ export default function PlanetCamera(props) {
     Longitude: { value: 0, max: Math.PI * 2, min: 0, step: 0.001 }
   });
 
-  if (toggleCam.on) {
-    camControls.enabled = false;
-  } else {
-    camControls.enabled = true;
+  if (camControls !== null) {
+    if (toggleCam.on) {
+      camControls.enabled = false;
+    } else {
+      camControls.enabled = true;
+    }
   }
 
-  console.log("toggleCam.on: " + toggleCam.on);
-  console.log("camera: " + camera);
-  console.log("camControls.enabled: " + camControls.enabled);
+  // console.log("toggleCam.on: " + toggleCam.on);
+  // console.log("camera: " + camera);
+  // console.log("camControls.enabled: " + camControls.enabled);
 
   const planetCam = useRef();
   useHelper(showH.showHelper && planetCam, CameraHelper, 1);
@@ -46,7 +48,7 @@ export default function PlanetCamera(props) {
   const quaternion = new Quaternion();
   const slerpQuaternion = new Quaternion();
   useFrame(() => {
-    if (!toggleCam.on) return;
+    if (!toggleCam.on || camControls === null) return;
 
     planetCam.current.getWorldPosition(vector);
     planetCam.current.getWorldQuaternion(quaternion);

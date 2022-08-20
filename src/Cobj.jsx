@@ -134,7 +134,7 @@ export function Cobj({ name, children }) {
           <Orbit
             radius={orbitRadius}
             color={s.color}
-            lineWidth={1}
+            lineWidth={0.5}
             arrows={s.arrows}
             reverse={s.reverseArrows}
             rotation={s.rotationArrows ? s.rotationArrows : 0}
@@ -143,17 +143,17 @@ export function Cobj({ name, children }) {
       )}
       <group name="Orbit" ref={orbitRef}>
         <group name="Pivot" ref={pivotRef} position={[orbitRadius, 0, 0]}>
-          <Sphere args={[2, 30, 30]} visible={s.visible}>
+          {/* <Sphere args={[1, 30, 30]} visible={s.visible}>
             <meshBasicMaterial
               attach="material"
               color={s.color}
               opacity={0.9}
               transparent
-            />
-            {s.axesHelper && <axesHelper args={[10, 10, 10]} />}
-            {s.earth && <Earth size={s.size} />}
-            {s.planet && <Planet size={s.size} />}
-          </Sphere>
+            /> */}
+          {s.axesHelper && <axesHelper args={[10, 10, 10]} />}
+          {s.earth && <Earth {...s} />}
+          {s.planet && <Planet {...s} />}
+          {/* </Sphere> */}
           {children}
         </group>
       </group>

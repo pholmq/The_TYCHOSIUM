@@ -87,7 +87,7 @@ export const celestialSettings = {
   },
   Sun: {
     name: "Sun",
-    size: 5,
+    size: 10,
     startPos: 0,
     speed: 6.283185307179586,
     rotationSpeed: 83.995,
