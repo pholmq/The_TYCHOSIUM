@@ -36,7 +36,7 @@ export function Planet(props) {
         {hovered && (
           <Html position={[-10, 0, 0]}>
             <div className="planetLabel">
-              {props.name} <br /> RA: XXhXXmXXs <br /> Dec: +XX°XX'XX"
+              {props.name} <br /> RA:&nbsp;XXhXXmXXs Dec:&nbsp;+XX°XX'XX"
             </div>
           </Html>
         )}
