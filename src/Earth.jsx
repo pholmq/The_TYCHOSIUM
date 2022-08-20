@@ -3,6 +3,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { Sphere, useTexture } from "@react-three/drei";
 import PlanetCamera from "./PlanetCamera";
 import { DoubleSide } from "three";
+import { useStore } from "./store.js";
 
 // import PlanetCamera from "./PlanetCamera";
 
@@ -11,12 +12,14 @@ export function Earth(props) {
 
   const earthRef = useRef();
   const cloudsRef = useRef();
-  const ref = useRef();
+  const posRef = useStore((state) => state.posRef);
   useFrame(() => {
     // earthRef.current.rotation.y -= 0.0005;
     // obj.planetObj.rotation.y = obj.rotationSpeed * pos
+    earthRef.current.rotation.y = props.rotationSpeed * posRef.current;
     cloudsRef.current.rotation.y -= 0.0004;
   });
+
   const [cloudsMap, colorMap] = useTexture([
     "/textures/2k_earth_clouds.jpg",
     "/textures/8k_earth_daymap.jpg"
@@ -38,8 +41,8 @@ export function Earth(props) {
         <meshStandardMaterial
           map={colorMap}
           // normalMap={normalMap}
-          metalness={0.4}
-          roughness={0.7}
+          metalness={0}
+          roughness={1}
           // side={DoubleSide}
         />
         <mesh ref={cloudsRef} scale="1">
