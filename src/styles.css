@@ -118,3 +118,22 @@ select {
 .controls .control button:active {
   background-color: #191c20;
 }
+
+
+.planetLabel {
+  /* padding-top: 10px; */
+  /* transform: translate3d(200%, 0, 0); */
+  /* text-align: right; */
+  color: white;
+}
+
+/* .planetLabel {
+  font-size: 1rem;
+  color: white;
+  position: relative;
+  left: 100px;
+  bottom: 100px;
+  /* position: absolute;
+  top: 0;
+  right: 0; */
+} */

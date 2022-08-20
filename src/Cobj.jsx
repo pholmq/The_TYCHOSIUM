@@ -1,11 +1,10 @@
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { Sphere } from "@react-three/drei";
 import { folder, useControls, button } from "leva";
 import { celestialSettings } from "./CelestialSettings.js";
 import { additionalSettings } from "./AdditionalSettings.js";
 import { useStore } from "./store.js";
-import { Vector3, MathUtils } from "three";
+import { Vector3 } from "three";
 
 import { Orbit } from "./Orbit";
 import { Planet } from "./Planet";
