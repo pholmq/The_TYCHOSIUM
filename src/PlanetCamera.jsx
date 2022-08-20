@@ -28,9 +28,13 @@ export default function PlanetCamera(props) {
     Latitude: { value: 0, max: Math.PI, min: -Math.PI, step: 0.001 },
     Longitude: { value: 0, max: Math.PI * 2, min: 0, step: 0.001 }
   });
-
+  const orgCamPos = new Vector3();
+  const orgRotation = new Quaternion();
   if (camControls !== null) {
+    console.log("camera: " + camera.position.x);
     if (toggleCam.on) {
+      camera.position.copy(orgCamPos);
+
       camControls.enabled = false;
     } else {
       camControls.enabled = true;
@@ -40,7 +44,6 @@ export default function PlanetCamera(props) {
   // console.log("toggleCam.on: " + toggleCam.on);
   // console.log("camera: " + camera);
   // console.log("camControls.enabled: " + camControls.enabled);
-
   const planetCam = useRef();
   useHelper(showH.showHelper && planetCam, CameraHelper, 1);
 
