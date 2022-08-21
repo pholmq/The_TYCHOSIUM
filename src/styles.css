@@ -119,7 +119,6 @@ select {
   background-color: #191c20;
 }
 
-
 .planetLabel {
   /* padding-top: 10px; */
   /* transform: translate3d(200%, 0, 0); */
@@ -131,14 +130,3 @@ select {
   margin: 0.2rem;
   padding: 0.4rem;
 }
-
-/* .planetLabel {
-  font-size: 1rem;
-  color: white;
-  position: relative;
-  left: 100px;
-  bottom: 100px;
-  /* position: absolute;
-  top: 0;
-  right: 0; */
-} */
