@@ -1,6 +1,12 @@
 import { useRef, useState } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Sphere, useTexture, Html, Billboard } from "@react-three/drei";
+import {
+  Selection,
+  Select,
+  EffectComposer,
+  SelectiveBloom
+} from "@react-three/postprocessing";
 
 import PlanetCamera from "./PlanetCamera";
 
@@ -50,6 +56,17 @@ export function Planet(props) {
           // side={DoubleSide}
         />
         {/* <PlanetCamera /> */}
+        {/* {props.glow && (
+          <EffectComposer>
+            {" "}
+            <SelectiveBloom
+              mipmapBlur
+              radius={0.5}
+              luminanceThreshold={0.001}
+              intensity={5}
+            />{" "}
+          </EffectComposer>
+        )} */}
         {props.light && <pointLight intensity={3} />}
       </mesh>
     </>
