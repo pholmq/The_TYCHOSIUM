@@ -29,6 +29,11 @@ export function Earth(props) {
   });
   return (
     <>
+      {hovered && (
+        <Html position={[0, 0, 0]}>
+          <div className="planetLabel">Earth</div>
+        </Html>
+      )}
       <mesh
         ref={earthRef}
         scale="1"
@@ -40,11 +45,6 @@ export function Earth(props) {
         onPointerOver={(e) => setHover(true)}
         onPointerOut={(e) => setHover(false)}
       >
-        {hovered && (
-          <Html position={[-10, 0, 0]}>
-            <div className="planetLabel">Earth</div>
-          </Html>
-        )}
         <sphereGeometry args={[props.size, 128, 128]} />
         {/* <meshPhongMaterial specularMap={specularMap} /> */}
         {/* <meshStandardMaterial

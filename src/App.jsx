@@ -1,6 +1,6 @@
 import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Stats, OrbitControls } from "@react-three/drei";
+import { Stats, OrbitControls, Stars } from "@react-three/drei";
 import { Leva } from "leva";
 import { useStore } from "./store";
 
@@ -98,10 +98,11 @@ export default function App() {
         }}
       >
         {/* <OrbitControls makeDefault target={[0, 0.5, 0]} /> */}
-        <OrbitControls makeDefault enableDamping={false} />
+        <OrbitControls makeDefault enableDamping={false} maxDistance={500000} />
         {/* <axesHelper args={[10, 10, 10]} position={[0, 0, 0]} /> */}
         {/* <directionalLight intensity={1} /> */}
         <ambientLight intensity={0.5} />
+        <Stars radius={100000} />
         <Suspense fallback={null}>
           <System />
         </Suspense>
