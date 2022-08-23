@@ -35,6 +35,7 @@ export function Earth(props) {
         </Html>
       )}
       <mesh
+        name="Earth"
         ref={earthRef}
         scale="1"
         rotation={[

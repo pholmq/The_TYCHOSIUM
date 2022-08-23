@@ -9,7 +9,7 @@ import {
   useHelper
 } from "@react-three/drei";
 export default function PlanetCamera(props) {
-  const { camera } = useThree();
+  const { camera, scene } = useThree();
   const camControls = useThree((state) => state.controls);
 
   const toggleCam = useControls("Planet Camera", {
@@ -82,6 +82,14 @@ export default function PlanetCamera(props) {
         // orgFar = camera.far;
         // orgNear = camera.near;
         camControls.enabled = false;
+
+        const earthObj = scene.getObjectByName("Earth");
+        var vec = new Vector3();
+        earthObj.getWorldPosition(vec);
+
+        console.log(
+          "Rotation: " + [...earthObj.rotation] + " Worldpos: " + [...vec]
+        );
       } else {
         // camera.position.copy(orgCamPos);
         // camera.rotation.setFromQuaternion(orgRotation);

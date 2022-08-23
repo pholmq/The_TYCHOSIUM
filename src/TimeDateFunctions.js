@@ -32,6 +32,10 @@ export const speedFactOptions = [
     value: sWeek
   },
   {
+    label: "1 month",
+    value: sMonth
+  },
+  {
     label: "1 year",
     value: sYear
   },
