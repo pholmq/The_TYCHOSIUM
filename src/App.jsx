@@ -16,11 +16,18 @@ const System = () => {
   const posRef = useStore((s) => s.posRef);
   const run = useStore((s) => s.run);
   const speedFact = useStore((state) => state.speedFact);
+  const setPlotPos = useStore((state) => state.setPlotPos);
 
   useFrame((state, delta) => {
     if (run) {
       // posRef.current = posRef.current + delta * 0.1;
       posRef.current = posRef.current + delta * speedFact;
+    }
+    //console.log(posRef.current);
+    setPlotPos(posRef.current);
+    if (1 % posRef.current === 0) {
+      console.log("fired");
+      setPlotPos(posRef.current);
     }
   });
 
