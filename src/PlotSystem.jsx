@@ -1,3 +1,5 @@
+//This system is to be kept indentical to the Tychos system object
+//and is used to calculate/plaot planetary positions
 import { PlotObj } from "./PlotObj";
 export function PlotSystem() {
   return (

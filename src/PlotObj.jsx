@@ -15,8 +15,8 @@ export function PlotObj({ name, children }) {
   const orbitRef = useRef();
 
   const containerPos = s.containerPos ? s.containerPos : 0;
-  // let pos = 0;
-  //  const pos = useStore((state) => state.pos);
+  console.log(name + " rendered");
+
   const plotPos = useStore((state) => state.plotPos);
   useEffect(() => {
     orbitRef.current.rotation.y =

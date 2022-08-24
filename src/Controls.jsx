@@ -21,8 +21,13 @@ export const Controls = () => {
   const posRef = useStore((state) => state.posRef);
   const speedFact = useStore((state) => state.speedFact);
   const setSpeedFact = useStore((state) => state.setSpeedFact);
+  const setPlotPos = useStore((state) => state.setPlotPos);
 
   useControls(() => ({
+    plotPos: {
+      value: useStore.getState().plotPos,
+      onChange: (v) => setPlotPos(v)
+    },
     orbits: {
       value: useStore.getState().orbits,
       onChange: (v) => toggleOrbits(v)
