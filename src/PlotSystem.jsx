@@ -1,5 +1,5 @@
 import { PlotObj } from "./PlotObj";
-export const PlotSystem = () => {
+export function PlotSystem() {
   return (
     <group>
       <PlotObj name="Barycenter">
@@ -38,4 +38,4 @@ export const PlotSystem = () => {
       </PlotObj>
     </group>
   );
-};
+}

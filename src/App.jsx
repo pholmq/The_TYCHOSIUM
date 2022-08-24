@@ -4,6 +4,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Stats, OrbitControls, Stars } from "@react-three/drei";
 import { Leva } from "leva";
 import { useStore } from "./store";
+import { PlotSystem } from "./PlotSystem";
 
 import { Cobj } from "./Cobj";
 import { Controls } from "./Controls";
@@ -106,6 +107,7 @@ export default function App() {
         <Stars radius={100000} />
         <Suspense fallback={null}>
           <System />
+          <PlotSystem />
         </Suspense>
         <Stats />
       </Canvas>
