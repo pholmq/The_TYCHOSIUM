@@ -1,5 +1,5 @@
 //Test
-import { Suspense, useRef } from "react";
+import { Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Stats, OrbitControls, Stars } from "@react-three/drei";
 import { Leva } from "leva";
@@ -7,6 +7,7 @@ import { useStore } from "./store";
 import { PlotSystem } from "./PlotSystem";
 
 import { Cobj } from "./Cobj";
+import { CelestialSphere } from "./CelestialSphere";
 import { Controls } from "./Controls";
 import "./styles.css";
 
@@ -60,14 +61,13 @@ const System = () => {
             </Cobj>
           </Cobj>
         </Cobj>
+        <CelestialSphere />
       </Cobj>
     </group>
   );
 };
 
 export default function App() {
-  const ocRef = useRef(null);
-
   return (
     <>
       <div
@@ -108,7 +108,7 @@ export default function App() {
         <Stars radius={100000} />
         <Suspense fallback={null}>
           <System />
-          <PlotSystem />
+          {/* <PlotSystem /> */}
         </Suspense>
         <Stats />
       </Canvas>

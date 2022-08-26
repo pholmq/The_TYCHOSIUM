@@ -5,6 +5,7 @@ import { useStore } from "./store.js";
 import { Html } from "@react-three/drei";
 
 import PlanetCamera from "./PlanetCamera";
+import { CelestialSphere } from "./CelestialSphere.jsx";
 
 export function Earth(props) {
   // console.log(props)
@@ -29,6 +30,7 @@ export function Earth(props) {
   });
   return (
     <>
+      <CelestialSphere tilt={props.tilt} tiltb={props.tiltb} visible={false} />
       {hovered && (
         <Html position={[0, 0, 0]}>
           <div className="planetLabel">Earth</div>
