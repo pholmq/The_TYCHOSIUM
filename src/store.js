@@ -14,5 +14,9 @@ export const useStore = create((set) => ({
   orbits: true,
   toggleOrbits: (v) => set({ orbits: v }),
   arrows: false,
-  toggleArrows: (v) => set({ arrows: v })
+  toggleArrows: (v) => set({ arrows: v }),
+  plotPos: 0,
+  setPlotPos: (v) => set({ plotPos: v }),
+  celSphereVisible: false,
+  toggleCelSphere: (v) => set({ celSphereVisible: v })
 }));

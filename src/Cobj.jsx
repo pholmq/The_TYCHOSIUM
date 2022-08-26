@@ -69,36 +69,39 @@ export function Cobj({ name, children }) {
   } = useControls(
     "Celestial settings",
     {
-      [name]: folder({
-        startPos: {
-          value: s.startPos
+      [name]: folder(
+        {
+          startPos: {
+            value: s.startPos
+          },
+          speed: {
+            value: s.speed
+          },
+          orbitRadius: {
+            value: s.orbitRadius,
+            min: 0
+          },
+          orbitCentera: {
+            value: s.orbitCentera
+          },
+          orbitCenterb: {
+            value: s.orbitCenterb
+          },
+          orbitCenterc: {
+            value: s.orbitCenterc
+          },
+          orbitTilta: {
+            value: s.orbitTilta
+          },
+          orbitTiltb: {
+            value: s.orbitTiltb
+          },
+          printPosToConsole: button(() => {
+            printPositions();
+          })
         },
-        speed: {
-          value: s.speed
-        },
-        orbitRadius: {
-          value: s.orbitRadius,
-          min: 0
-        },
-        orbitCentera: {
-          value: s.orbitCentera
-        },
-        orbitCenterb: {
-          value: s.orbitCenterb
-        },
-        orbitCenterc: {
-          value: s.orbitCenterc
-        },
-        orbitTilta: {
-          value: s.orbitTilta
-        },
-        orbitTiltb: {
-          value: s.orbitTiltb
-        },
-        printPosToConsole: button(() => {
-          printPositions();
-        })
-      })
+        { collapsed: true }
+      )
     },
     { collapsed: true }
   );

@@ -1,4 +1,21 @@
 export const additionalSettings = {
+  CelestialSphere: {
+    name: "CelestialSphere",
+    size: 40,
+    startPos: 0,
+    speed: -0.0002479160869310127,
+    rotationSpeed: 0,
+    tilt: -23.439062,
+    tiltb: 0.26,
+    orbitRadius: 37.8453,
+    orbitCentera: 0,
+    orbitCenterb: 0,
+    orbitCenterc: 0,
+    orbitTilta: 0,
+    orbitTiltb: 0,
+    visible: true
+  },
+
   Barycenter: {
     color: "grey",
     type: "deferent",
